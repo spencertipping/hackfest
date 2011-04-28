@@ -34,7 +34,7 @@ $(caterwaul.clone('std seq continuation')(function () {
                                                        when[_.x * (c2.x - c1.x) + _.y * (c2.y - c1.y) < 0],
                                                        where*[c1 = this.center(), c2 = e.center(), factor = this.distance_from(e), energy = e.speed()]]],
 
-  $.fn.remove_energy(dt)   = this /se[_.velocity().x *= 1.0 - friction, _.velocity().y *= 1.0 - friction, where[friction = 0.0002 * _.speed() /re[_ * _]]],
+  $.fn.remove_energy(dt)   = this /se[_.velocity().x *= 1.0 - friction, _.velocity().y *= 1.0 - friction, where[friction = 0.0003 * _.speed() /re[_ * _]]],
 
   $.fn.bound_to_body()     = this /se[y < 0                                             && (v.y = -v.y, $(this).real_position($(this).real_position().left, 0)),
                                       x < $('body').position().left                     && (v.x = -v.x, $(this).real_position($('body').position().left, $(this).real_position().top)),
@@ -51,7 +51,7 @@ $(caterwaul.clone('std seq continuation')(function () {
   $.fn.handle_collisions() = this.each(_) /cps[l[that = this] in seq[~$('.bumper:visible') *+$ %[_.collides_with($(that))] *![_.bounce($(that))]]],
 
   setInterval(_, 1000) /cps[$('.bumper').length < 10 &&
-                            $('.appear') /re[$(_[_.length * Math.random() >>> 0]).clone().removeClass('appear').appendTo('#ocean').css({left: Math.random() * 800, top: 0})]],
+                            $('.appear') /re[$(_[_.length * Math.random() >>> 0]).clone().removeClass('appear').appendTo('#ocean').css({left: Math.random() * 800, top: Math.random() * 200})]],
 
   $(document).mousemove(_) /cps.e[$('#paddle').real_position(e.pageX - ($('#paddle').width() >> 1) + $('body').position().left, $('#paddle').position().top)],
 
